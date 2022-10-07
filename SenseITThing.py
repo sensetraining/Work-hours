@@ -211,6 +211,7 @@ def weekCheck():
                         for j in range (7):
                             print(j)
                             if sheet.cell(9+j,1).value == "Month Total":
+                                time.sleep(1)
                                 print("Uh oh")
                                 
                                 for k in range (j,7):
@@ -271,11 +272,15 @@ def weekCheck():
                                     print(addMonth)
                         
                         monthTotal = ["Month Total"]
-                        monthRow = [""]
+                        monthRow = []
                         Letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
                         for p in range (25):
                             for o in range(monthLength):
                                 monthRow.append(f"=SUM({Letters[p+1]}{10+o}+")
+
+                            yes = "".join(monthRow)
+                            monthTotal.append(yes)
+                            print(monthTotal)
 
                         print(monthRow)
 
